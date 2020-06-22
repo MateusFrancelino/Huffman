@@ -48,7 +48,10 @@ OBJECTS_DIR   = release
 SOURCES       = main.cpp 
 OBJECTS       = release/main.o
 
-DIST          =  ListaGenerica.h main.cpp
+DIST          =  ArvoreHuffman.h \
+		Insercao.h \
+		ListaGenerica.h \
+		Structs.h main.cpp
 QMAKE_TARGET  = Huffman
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = Huffman.exe
@@ -96,7 +99,10 @@ compiler_clean:
 
 ####### Compile
 
-release/main.o: main.cpp ListaGenerica.h
+release/main.o: main.cpp ArvoreHuffman.h \
+		Insercao.h \
+		Structs.h \
+		ListaGenerica.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 ####### Install

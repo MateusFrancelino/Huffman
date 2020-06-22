@@ -7,4 +7,7 @@ SOURCES += \
         main.cpp
 
 HEADERS += \
-    ListaGenerica.h
+    ArvoreHuffman.h \
+    Insercao.h \
+    ListaGenerica.h \
+    Structs.h

@@ -48,7 +48,10 @@ OBJECTS_DIR   = debug
 SOURCES       = main.cpp 
 OBJECTS       = debug/main.o
 
-DIST          =  ListaGenerica.h main.cpp
+DIST          =  ArvoreHuffman.h \
+		Insercao.h \
+		ListaGenerica.h \
+		Structs.h main.cpp
 QMAKE_TARGET  = Huffman
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = Huffman.exe
@@ -96,7 +99,10 @@ compiler_clean:
 
 ####### Compile
 
-debug/main.o: main.cpp ListaGenerica.h
+debug/main.o: main.cpp ArvoreHuffman.h \
+		Insercao.h \
+		Structs.h \
+		ListaGenerica.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 ####### Install
