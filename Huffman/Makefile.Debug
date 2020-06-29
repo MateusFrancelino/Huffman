@@ -51,6 +51,8 @@ OBJECTS       = debug/main.o
 DIST          =  ArvoreHuffman.h \
 		Insercao.h \
 		ListaGenerica.h \
+		ProgramaCodificador.h \
+		ProgramaDecodificador.h \
 		Structs.h main.cpp
 QMAKE_TARGET  = Huffman
 DESTDIR        = debug\ #avoid trailing-slash linebreak
@@ -99,10 +101,12 @@ compiler_clean:
 
 ####### Compile
 
-debug/main.o: main.cpp ArvoreHuffman.h \
+debug/main.o: main.cpp ProgramaDecodificador.h \
+		ArvoreHuffman.h \
 		Insercao.h \
 		Structs.h \
-		ListaGenerica.h
+		ListaGenerica.h \
+		ProgramaCodificador.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 ####### Install

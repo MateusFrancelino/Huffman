@@ -1,9 +1,49 @@
-#include <iostream>
+#include <ProgramaDecodificador.h>
+#include <ProgramaCodificador.h>
 
 
-#include <ArvoreHuffman.h>
 
-using namespace std;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -12,81 +52,44 @@ using namespace std;
 
 
 int main()
-{
-    ListaEncadeada<frequenciador>palavras;
-    inicializaListaEnc(palavras);
+{   int escolha=0;
+    bool continuar=true;
 
+    while(continuar){
 
-    string linha,palavratexto;
+    cout<<"digite sua escolha"<<endl;
+    cout<<"para codificar digite 0"<<endl;
+    cout<<"para decodificar digite 1"<<endl;
+    cin>>escolha;
+    if(escolha==0){
 
-    ifstream texto;
-    texto.open("frase.txt");
-    if(texto.is_open()){
-        cout<<"arquivo Aberto com sucesso"<<endl;
-    }else {
-        cout<<"erro ao abrir o arquivo"<<endl;
-    }
-    if(texto.is_open()){
-        while(getline(texto,linha)){
-            cout<<linha<<endl;
-
-            for(int i=0;i<linha.size();i++){
-
-               estabelecerFrequencia(palavras,linha[i],linha);
+     programa0();
 
 
 
-            }
 
-        }
+
+
+
+    }else if(escolha==1){
+       programa1();
+
+    }else{
+        cout<<"numero invalido";
     }
 
-    //debug(palavras);
 
-    ElementoEncadeado<frequenciador>*nav=palavras.inicio;
-    while(nav->proximo!=NULL){
-    criaArvore(palavras);
-    nav=palavras.inicio;
+    cout<<endl;
+    cout<<"digite sua escolha"<<endl;
+    cout<<"para continuar 0"<<endl;
+    cout<<"para sair 1"<<endl;
+    cin>>escolha;
+    if(escolha==1){
+        continuar=false;
+    }else{
+        system("cls");
     }
 
-    debug(nav->dado);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    cout<<endl<<"Programa Finalizado"<<endl;
-coiso();
+}
     return 0;
 }

@@ -3,7 +3,7 @@
 #include <sstream>
 #include <Insercao.h>
 #include <ListaGenerica.h>
-string cm2pika="";
+
 void debug (frequenciador &freq,string cm=""){
 
 
@@ -11,38 +11,48 @@ void debug (frequenciador &freq,string cm=""){
     if(freq.esquerda!=NULL){
         //cout<<"pegou esquerda"<<endl;
         //cout<<freq.frequencia<<endl;
-        cm+="0";
-        debug(*freq.esquerda,cm);
+
+        debug(*freq.esquerda,cm+="0");
+
+
+
     }
 
 
     if(freq.direita!=NULL){
         //cout<<"pegou direita"<<endl;
+        string temp="";
+        for(int i=0;i<cm.size()-1;i++){
+            temp+=cm[i];
+        }
+        cm=temp;
+
         cm+="1";
         //cout<<freq.frequencia<<endl;
         debug(*freq.direita,cm);
     }
 
-    if(freq.direita==NULL&&freq.esquerda==NULL){
-        cm2pika.append(cm);
-        stringstream geek(cm2pika);
-        int x=0;
-        geek>>x;
+
+    if(freq.esquerda==NULL&&freq.direita==NULL){
+
+
+
         //cout<<"tudo nulo "<<endl
-        cout<<"letra :"<<freq.letra<<endl;
-        //<<"frequencia"<<freq.frequencia<<endl;
-        cout<<"binario"<<cm<<endl;
-        cout<<"binario"<<(char)x<<endl;
+        cout<<"letra :"<<freq.letra<<" "
+        <<"frequencia"<<freq.frequencia<<endl;
+        cout<<cm<<endl;
+        cm="";
+
+        cout<<endl<<endl;
+
+
 
 
         }
 
 }
 
-void coiso(){
-    cout<<cm2pika;
 
-};
 
 void criaArvore(ListaEncadeada<frequenciador>&palavras){
    ElementoEncadeado<frequenciador>*primeiro=palavras.inicio;
@@ -68,7 +78,7 @@ void criaArvore(ListaEncadeada<frequenciador>&palavras){
    novo->direita=direita;
    novo->letra=NULL;
    inserirFrequencia(palavras,*novo);
-   cout<<".";
+   cout<<"."<<endl;
 
 
 }

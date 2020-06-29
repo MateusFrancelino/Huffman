@@ -10,4 +10,6 @@ HEADERS += \
     ArvoreHuffman.h \
     Insercao.h \
     ListaGenerica.h \
+    ProgramaCodificador.h \
+    ProgramaDecodificador.h \
     Structs.h
